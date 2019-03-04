@@ -1,0 +1,11 @@
+enabled: true
+logFileLimit: 1000
+traceThreshold: apdex_f
+recordSql: obfuscated
+distributedTracing: true
+aopEnabled: false
+envType: K8S
+region: US
+appType: Integrations
+appNames: ';ServiceSync'
+customLabels:
