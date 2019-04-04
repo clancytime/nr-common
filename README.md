@@ -10,6 +10,6 @@ Created using a base busybox image, allowing size to be small (~25 MB), and runs
 ## Helm
 This is a subchart to more easily add required details for a java application. Adds templates and basic new relic config file. 
 
-Automatically will add a new relic config file as a configmap with app name set to global.name value of helm chart using this subchart. For templates, see usage in [integ-pbs2](https://ghe.coxautoinc.com/XTime/integ-pbs2/tree/7.62.0-DEVELOP/src/helm/templates) repo.
+Automatically will add a new relic config file as a configmap with app name set to global.name value of helm chart using this subchart.
 
 Documentation of subcharts and overriding values: https://github.com/helm/helm/blob/master/docs/chart_template_guide/subcharts_and_globals.md
