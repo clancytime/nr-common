@@ -9,3 +9,4 @@ region: US
 appType: Integrations
 appNames: ';ServiceSync'
 customLabels:
+transformations: {}

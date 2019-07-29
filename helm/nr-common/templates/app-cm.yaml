@@ -247,6 +247,9 @@ data:
         auto_instrument: true
 
       class_transformer:
+{{- if .Values.transformations }}
+{{ toYaml .Values.transformations | indent 8 }}
+{{- end }}
         # This instrumentation reports the name of the user principal returned from
         # HttpServletRequest.getUserPrincipal() when servlets and filters are invoked.
         com.newrelic.instrumentation.servlet-user:
