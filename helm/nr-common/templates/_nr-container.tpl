@@ -1,7 +1,7 @@
 {{- define "nr.container" -}}
 initContainers:
 - name: nr-busybox
-  image: shanesol/nr-busybox:{{ .Values.nrVersion | default "4.7.0" }}
+  image: {{ .Values.imagePrefix | default "shanesol" }}/nr-busybox:{{ .Values.nrVersion | default "4.7.0" }}
   command:
     - "sh"
     - "-c"
