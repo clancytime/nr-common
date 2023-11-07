@@ -14,6 +14,16 @@ initContainers:
       else
         mv /opt/newrelic /nr-agent
       fi
+
+      {{- if eq .Values.coroutines.enabled true }}
+      cd /nr-agent
+      mkdir extensions || true
+      cd extensions
+      wget https://github.com/newrelic/newrelic-java-kotlin-coroutines/releases/download/1.3/Kotlin-Coroutines_1.0.jar
+      wget https://github.com/newrelic/newrelic-java-kotlin-coroutines/releases/download/1.3/Kotlin-Coroutines_1.1.jar
+      wget https://github.com/newrelic/newrelic-java-kotlin-coroutines/releases/download/1.3/Kotlin-Coroutines_1.2.jar
+      wget https://github.com/newrelic/newrelic-java-kotlin-coroutines/releases/download/1.3/Kotlin-Coroutines_1.4.jar
+      {{- end }}
   volumeMounts:
    - name: nr-agent
      mountPath: /nr-agent

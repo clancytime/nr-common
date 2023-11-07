@@ -1,4 +1,4 @@
 name: nr-common
 description: boilerplate logic for adding new relic to servicesync apps
-version: 0.0.6
+version: 0.0.7
 apiVersion: v1

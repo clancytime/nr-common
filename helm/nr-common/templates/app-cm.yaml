@@ -269,7 +269,7 @@ data:
           org.mvel2.optimizers.impl.asm.ASMAccessorOptimizer$ContextClassLoader,
           gw.internal.gosu.compiler.SingleServingGosuClassLoader,
 
-{{- if .Values.coroutines }}
+{{- if .Values.coroutines.ignore }}
       Coroutines:
         ignores:
 {{ toYaml .Values.coroutines | indent 10 }}
@@ -285,8 +285,8 @@ data:
         EnvType: {{ .Values.envType }}
         Region: {{ .Values.region }}
         appType: {{ .Values.appType }}
-        {{- range $key, $value := .Values.customLabels -}}
-        $key: $value
+        {{- range $key, $value := .Values.customLabels }}
+        {{ $key }}: {{ $value }}
         {{- end }}
         # An example label
         #label_name: label_value

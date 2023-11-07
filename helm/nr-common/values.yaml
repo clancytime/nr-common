@@ -9,9 +9,12 @@ region: US
 appType: Integrations
 appNames: ';ServiceSync'
 customLabels:
+  test: label
 transformations: {}
 autoTransactionNaming: true
-coroutines: {}
+coroutines:
+  enabled: true
+  ignore: {}
 
 global:
   name: test
