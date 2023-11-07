@@ -10,3 +10,8 @@ appType: Integrations
 appNames: ';ServiceSync'
 customLabels:
 transformations: {}
+autoTransactionNaming: true
+coroutines: {}
+
+global:
+  name: test

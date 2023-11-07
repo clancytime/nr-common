@@ -50,7 +50,7 @@ data:
       # Set to true to enable component-based transaction naming.
       # Set to false to use the URI of a web request as the name of the transaction.
       # Default is true.
-      enable_auto_transaction_naming: true
+      enable_auto_transaction_naming: {{ .Values.autoTransactionNaming }}
 
       # The agent uses its own log file to keep its logging
       # separate from that of your application.  Specify the log level here.
@@ -268,6 +268,13 @@ data:
           org.springframework.data.convert.ClassGeneratingEntityInstantiator$ObjectInstantiatorClassGenerator,
           org.mvel2.optimizers.impl.asm.ASMAccessorOptimizer$ContextClassLoader,
           gw.internal.gosu.compiler.SingleServingGosuClassLoader,
+
+{{- if .Values.coroutines }}
+      Coroutines:
+        ignores:
+{{ toYaml .Values.coroutines | indent 10 }}
+{{- end }}
+
 
       # User-configurable custom labels for this agent.  Labels are name-value pairs.
       # There is a maximum of 64 labels per agent.  Names and values are limited to 255 characters.
