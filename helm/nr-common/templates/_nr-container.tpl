@@ -16,7 +16,7 @@ initContainers:
       fi
 
       {{- if eq .Values.coroutines.enabled true }}
-      cd /nr-agent
+      cd /nr-agent/newrelic
       mkdir extensions || true
       cd extensions
       wget https://github.com/newrelic/newrelic-java-kotlin-coroutines/releases/download/1.3/Kotlin-Coroutines_1.0.jar

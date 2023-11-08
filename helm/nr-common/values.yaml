@@ -13,8 +13,5 @@ customLabels:
 transformations: {}
 autoTransactionNaming: true
 coroutines:
-  enabled: true
+  enabled: false
   ignore: {}
-
-global:
-  name: test
